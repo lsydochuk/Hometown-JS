@@ -15,7 +15,6 @@ header {
     padding: 80px 0;
 }
 
-/* Добавление затемнения на фон для лучшей читабельности текста */
 header::before {
     content: '';
     position: absolute;
@@ -53,20 +52,15 @@ header p {
 .carousel-container {
     position: relative;
     max-width: 700px;
-    /* Увеличение максимальной ширины карусели */
     margin: 20px auto;
 }
 
 .carousel-container img {
     width: 100%;
-    /* Сделать изображение шириной 100% контейнера */
     height: 400px;
-    /* Установить фиксированную высоту */
     object-fit: cover;
-    /* Сохранять пропорции изображения, заполняя контейнер */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Добавить тень на изображении */
 }
 
 .carousel-btn {
@@ -80,7 +74,6 @@ header p {
     cursor: pointer;
     font-size: 24px;
     z-index: 2;
-    /* Чтобы кнопки располагались выше картинки */
 }
 
 #prev {
@@ -91,10 +84,6 @@ header p {
     right: 0;
 }
 
-.news-details {
-    margin-top: 20px;
-}
-
 .guide {
     margin-top: 20px;
     background-color: #e7f3ff;
@@ -102,9 +91,7 @@ header p {
     display: inline-block;
     border-radius: 8px;
     max-width: 700px;
-    /* Ширина блока гида */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Добавить тень блоку гида */
 }
 
 .guide img {

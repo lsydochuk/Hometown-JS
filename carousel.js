@@ -1,47 +1,48 @@
-// Массив с новостями
-var news = [
-  {
-    image: 'images/CreweFootball.jpg',
-    title: 'Watch a Football Match',
-    description: 'Visit the famous Alexandra Stadium and cheer for Crewe Alexandra Football Club.'
-  },
-  {
-    image: 'images/QueensPark.jpeg',
-    title: 'Relax at Queens Park',
-    description: 'One of Cheshire\'s finest parks, perfect for a leisurely stroll or a picnic with friends.'
-  },
-  {
-    image: 'images/CreweHeritageCentre.jpg',
-    title: 'Visit Crewe Heritage Centre',
-    description: 'Learn about Crewe\'s rich railway history and explore historic locomotives and trains.'
+var images, currentIndex;
+
+
+images = ['https://via.placeholder.com/300x150/FF0000', 'https://via.placeholder.com/300x150/00FF00', 'https://via.placeholder.com/300x150/0000FF'];
+currentIndex = 0;
+let element_carousel = document.getElementById('carousel');
+element_carousel.setAttribute("src", images[0]);
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  currentIndex = (typeof currentIndex === 'number' ? currentIndex : 0) + 1;
+  if (currentIndex > 2) {
+    currentIndex = 0;
   }
-];
+  if (currentIndex == 0) {
+    let element_carousel2 = document.getElementById('carousel');
+    element_carousel2.setAttribute("src", 'https://via.placeholder.com/300x150/FF0000');
+  }
+  if (currentIndex == 1) {
+    let element_carousel3 = document.getElementById('carousel');
+    element_carousel3.setAttribute("src", 'https://via.placeholder.com/300x150/00FF00');
+  }
+  if (currentIndex == 2) {
+    let element_carousel4 = document.getElementById('carousel');
+    element_carousel4.setAttribute("src", 'https://via.placeholder.com/300x150/0000FF');
+  }
 
-var currentIndex = 0;
-
-// Функция для обновления карусели
-function updateCarousel() {
-  var carousel = document.getElementById('carousel');
-  var newsTitle = document.getElementById('news-title');
-  var newsDescription = document.getElementById('news-description');
-
-  carousel.setAttribute('src', news[currentIndex].image);
-  newsTitle.textContent = news[currentIndex].title;
-  newsDescription.textContent = news[currentIndex].description;
-}
-
-// Обработчик для кнопки "Следующий"
-document.getElementById('next').addEventListener('click', function() {
-  currentIndex = (currentIndex + 1) % news.length;
-  updateCarousel();
 });
 
-// Обработчик для кнопки "Предыдущий"
-document.getElementById('prev').addEventListener('click', function() {
-  currentIndex = (currentIndex - 1 + news.length) % news.length;
-  updateCarousel();
+document.getElementById('prev').addEventListener('click', (event) => {
+  currentIndex = (typeof currentIndex === 'number' ? currentIndex : 0) + -1;
+  if (currentIndex < 0) {
+    currentIndex = 2;
+  }
+  if (currentIndex == 0) {
+    let element_carousel5 = document.getElementById('carousel');
+    element_carousel5.setAttribute("src", 'https://via.placeholder.com/300x150/FF0000');
+  }
+  if (currentIndex == 1) {
+    let element_carousel6 = document.getElementById('carousel');
+    element_carousel6.setAttribute("src", 'https://via.placeholder.com/300x150/00FF00');
+  }
+  if (currentIndex == 2) {
+    let element_carousel7 = document.getElementById('carousel');
+    element_carousel7.setAttribute("src", 'https://via.placeholder.com/300x150/0000FF');
+  }
+
 });
-
-// Инициализация карусели с первой новостью
-updateCarousel();
-
