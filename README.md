@@ -20,4 +20,4 @@ The project consists of the following files:
 ## Installation and Usage
 
 1. Repository:
-   https://github.com/lsydochuk/Hometown-Homepage-JS
+   https://github.com/lsydochuk/Hometown-JS
